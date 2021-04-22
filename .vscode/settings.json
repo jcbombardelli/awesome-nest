@@ -1,0 +1,35 @@
+{
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[yaml]": {
+    "editor.formatOnSave": true
+  },
+  "[terraform]": {
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    ".git": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "search.exclude": {
+    "**/dist": true,
+    "**/.vscode": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/yarn.lock": true
+  },
+  "yaml.format.printWidth": 120,
+  "yaml.format.singleQuote": true
+}

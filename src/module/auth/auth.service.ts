@@ -7,7 +7,7 @@ import { InjectRepository } from '@nestjs/typeorm'
 
 @Injectable()
 export class AuthService {
-  
+
   constructor(
     @InjectRepository(AuthRepository) private authRepository: AuthRepository,
     private jwtService: JwtService,
@@ -15,7 +15,6 @@ export class AuthService {
 
   async login(user: User): Promise<any> {
 
-    
     const payload = {
       sub: user.id,
       name: user.name,
@@ -29,17 +28,13 @@ export class AuthService {
     }
   }
 
-  async authenticate(email: string, password: string ): Promise<Partial<User>> {
-    const user = await this.authRepository.findUserByEmail(email) 
-    
+  async authenticate(email: string, password: string): Promise<Partial<User>> {
+    const user = await this.authRepository.findUserByEmail(email)
     if (!(user && await this.cryptoService.compare(password, user.password))) {
       return null;
     }
 
-
-    return user
+    const { password: _, ...allowedFields } = user;
+    return allowedFields;
   }
-
-  
-
 }

@@ -3,13 +3,13 @@ import { ApiProperty } from '@nestjs/swagger';
 export class LoginRequestDTO {
   @ApiProperty({
     description: 'We usually pass email as username.',
-    default: 'michaelscott@michaelscottpappercompany.com'
+    default: 'michael.scott@dundermifflin.com'
   })
   username: string;
 
   @ApiProperty({
     description: "It's necessary explain that? xD",
-    default: 'a1s2d3f4g5h6'
+    default: 'threatlevelmidnight123'
   })
   password: string;
 }

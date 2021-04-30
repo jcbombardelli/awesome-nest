@@ -6,12 +6,16 @@ import { jwtConfig } from 'src/configs/jwt.config';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-	
-  constructor() {
+
+	constructor() {
 		super({
 			jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
 			ignoreExpiration: false,
 			secretOrKey: jwtConfig().secret,
 		});
-  }		
+	}
+
+	async validate(payload: any): Promise<any> {
+		return payload
+	}
 }
